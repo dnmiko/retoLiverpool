@@ -5,7 +5,7 @@ const expiresIn = "1d";
 const secret = "samplejwtliverpool";
 
 export const createToken = function (email, password) {
-
+    //Verificamos que haya información en el request para no realizar operaciones innecesarias.
     if (!email || !password) {
         return false;
     }
@@ -14,11 +14,9 @@ export const createToken = function (email, password) {
             "email": email
         })
         .then(function (user) {
-            console.log(user);
-
+            //Comparamos las contraseñas, sólo en caso de que sean iguales generamos el token.
             const compare = new Promise(function (resolve, reject) {
                 user.comparePassword(password, function (err, isMatch) {
-                    console.log(isMatch);
                     if (isMatch) {
                         let payload = {
                             email: user.email,

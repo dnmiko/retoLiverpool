@@ -8,8 +8,8 @@ import {
 } from '../../types/products';
 
 const querySingleProduct = {
-
     type: ProductType,
+    //Recibe de parámetro un ID de producto para buscarlo.
     args: {
         id: {
             name: 'ID',
@@ -17,6 +17,7 @@ const querySingleProduct = {
         }
     },
     resolve(root, params) {
+        //Utilizamos un método de mongoose para buscar un producto por ID.
         const product = Product.findById(params.id).exec();
         return product;
     }

@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const Schema = mongoose.Schema;
 
-const ProducSchema = new Schema({
+const ProductSchema = new Schema({
     "name": {
         type: String,
         required: true
@@ -24,4 +24,4 @@ const ProducSchema = new Schema({
     timestamps: true
 });
 
-export default mongoose.model("Products", ProducSchema);
+export default mongoose.model("Products", ProductSchema);
