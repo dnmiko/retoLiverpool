@@ -1,8 +1,9 @@
 import jwt from 'jsonwebtoken';
 import User from '../models/users';
+import constants from './const';
 
-const expiresIn = "1d";
-const secret = "samplejwtliverpool";
+const expiresIn = constants.tokenExpiration;
+const secret = constants.tokenSecret;
 
 export const createToken = function (email, password) {
     //Verificamos que haya información en el request para no realizar operaciones innecesarias.

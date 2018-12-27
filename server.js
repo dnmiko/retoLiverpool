@@ -6,6 +6,7 @@ import UserSchema from './src/models/users';
 import graphQLHTTP from 'express-graphql';
 import schema from './src/graphql';
 import cors from 'cors';
+import constants from './const';
 import {
     createToken
 } from './src/resolvers/create';
@@ -27,7 +28,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 //Creamos la conexión con la base de datos.
-mongoose.connect('mongodb://admin:retoLiverpool1@ds141633.mlab.com:41633/retoliverpool');
+mongoose.connect(constants.mongooseURL);
 const db = mongoose.connection;
 
 //Creamos callbacks para los casos de error y éxito de la conexión con la base de datos.

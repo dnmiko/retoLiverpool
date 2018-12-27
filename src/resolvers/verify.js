@@ -1,8 +1,9 @@
 import User from '../models/users';
 import jwt from 'jsonwebtoken';
+import constants from './const';
 
-const secret = "samplejwtliverpool";
-const tokenPrefix = "JWT";
+const secret = constants.tokenSecret;
+const tokenPrefix = constants.tokenPrefix;
 
 export const verifyToken = (token) => {
     try {
