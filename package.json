@@ -4,6 +4,7 @@
   "description": "Primer ejercicio del reto Liverpool",
   "main": "server.js",
   "scripts": {
+    "server": "nodemon server.js --exec babel-node --presets es2015,stage-2",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,5 +19,16 @@
   "bugs": {
     "url": "https://github.com/dnmiko/retoLiverpool/issues"
   },
-  "homepage": "https://github.com/dnmiko/retoLiverpool#readme"
+  "homepage": "https://github.com/dnmiko/retoLiverpool#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.5",
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1"
+  }
 }
