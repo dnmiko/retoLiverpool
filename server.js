@@ -2,9 +2,18 @@ import express from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import UserSchema from './src/models/users';
+import graphQLHTTP from 'express-graphql';
+import schema from './src/graphql';
 import {
     createToken
 } from './src/resolvers/create';
+const {
+    ObjectId
+} = mongoose.Types;
+
+ObjectId.prototype.valueOf = function () {
+    return this.toString();
+};
 
 //iniciamos una instancia del servidor de express.
 const app = express();
@@ -54,6 +63,15 @@ app.post('/login', function (req, res) {
         });
     });
 });
+
+app.use('/graphql', graphQLHTTP((req, res) => ({
+    schema,
+    graphiql: true,
+    pretty: true,
+    context: {
+        user: req.user
+    }
+})));
 
 app.listen(PORT, function () {
     console.log("App working in port " + PORT);
