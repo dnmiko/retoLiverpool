@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 import User from '../models/users';
-import constants from './const';
+import constants from '../../const';
 
 const expiresIn = constants.tokenExpiration;
 const secret = constants.tokenSecret;

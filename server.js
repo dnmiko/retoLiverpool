@@ -25,7 +25,7 @@ ObjectId.prototype.valueOf = function () {
 //iniciamos una instancia del servidor de express.
 const app = express();
 //Definimos el puerto en el cual podemos acceder al proyecto.
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4200;
 
 //Creamos la conexión con la base de datos.
 mongoose.connect(constants.mongooseURL);
