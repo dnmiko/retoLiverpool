@@ -60,7 +60,7 @@ app.post('/signup', function (req, res) {
 //Endpoint para logear a un usuario.
 app.post('/login', function (req, res) {
     const token = createToken(req.body.email, req.body.password).then((token) => {
-        res.status(201).json({
+        res.status(200).json({
             token
         });
 
